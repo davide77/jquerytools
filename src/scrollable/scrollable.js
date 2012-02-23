@@ -231,8 +231,9 @@
 			//  Clone the first conf.size items and append them to the container, and clone
 			//  the last conf.size items and prepend them to the container. 
 			//
-			var  cloned2 = self.getItems().slice(0,self.getSize()).clone().addClass(conf.clonedClass).appendTo(itemWrap),
-			 cloned1 = self.getItems().slice(-self.getSize()).clone().addClass(conf.clonedClass).prependTo(itemWrap);
+			var items = self.getItems();
+			var  cloned2 = items.slice(0,self.getSize()).clone().addClass(conf.clonedClass).appendTo(items.parent()),
+			 cloned1 = items.slice(-self.getSize()).clone().addClass(conf.clonedClass).prependTo(items.parent());
   	
 			self.onBeforeSeek(function(e, i, time) {
 				
