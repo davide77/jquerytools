@@ -12,9 +12,7 @@ $(function() {
 		size: 3,
 		circular: true		
 	}).navigator(); 	
-});
 
-$(function() {
 	$("#scrollable-auto").scrollable({
 		size: 3,
 		circular: true		
@@ -22,12 +20,33 @@ $(function() {
 		autoplay: true,
 		interval: 1000
 	}); 	
+
+	$("#scrollable-auto2").scrollable({
+		easing: 'linear',
+		size: 1,
+		circular: true,
+		speed: 3000
+	}).navigator().autoscroll({
+		autoplay: true,
+		interval: 0
+	});
+	
+	$("#scrollable-auto3").scrollable({
+		easing: 'linear',
+		size: 1,
+		circular: true,
+		speed: 3000,
+		item: " ul:first > *"
+	}).navigator().autoscroll({
+		autoplay: true,
+		interval: 0
+	});	
 });
 </script>
 
 
 <div>
-	
+		<h2>3 Steps</h2>	
 	<a class="prev">prev</a>
 	
 	<div id="scrollable" class="scrollable" style="width:390px">
@@ -50,7 +69,7 @@ $(function() {
 </div>
 
 <div>
-	
+	<h2>Autoscroll 3 Steps</h2>
 	<a class="prev">prev</a>
 	
 	<div id="scrollable-auto" class="scrollable" style="width:390px">
@@ -64,6 +83,56 @@ $(function() {
 			<div>5</div>  
 			<div>6</div>
 			<div>7</div> 
+		</div>
+		
+	</div> 
+	
+	<a class="next">next</a>
+	
+</div>
+
+
+<div>
+	<h2>Autoscroll 1 Step</h2>
+	<a class="prev">prev</a>
+	
+	<div id="scrollable-auto2" class="scrollable" style="width:390px">
+		
+		<div class="items">
+			<div>0</div>  
+			<div>1</div>  
+			<div>2</div>  
+			<div>3</div>  
+			<div>4</div>
+			<div>5</div>  
+			<div>6</div>
+			<div>7</div> 
+		</div>
+		
+	</div> 
+	
+	<a class="next">next</a>
+	
+</div>
+
+
+<div>
+	<h2>Scrolling with item config option</h2>
+	<a class="prev">prev</a>
+	
+	<div id="scrollable-auto3" class="scrollable" style="width:390px">
+		
+		<div class="items">
+			<ul>
+				<li>0</li>  
+				<li>1</li>  
+				<li>2</li>  
+				<li>3</li>  
+				<li>4</li>
+				<li>5</li>  
+				<li>6</li>
+				<li>7</li>
+			</ul> 
 		</div>
 		
 	</div> 
